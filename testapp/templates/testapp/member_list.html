@@ -1,0 +1,30 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>団員一覧</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">学籍番号</th>
+              <th scope="col">氏名</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for member in members %}
+            <tr>
+                <th scope="row">{{ member.id }}</th>
+                <td>{{ member.number }}</td>
+                <td>{{ member.name }}</td>
+                <td>
+                    <form action="{{ url_for('member_delete', id=member.id) }}" method="POST">  
+                        <input class="btn btn-danger btn-sm" type="submit" value="削除">  
+                      </form>
+                </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+</div>
+{% endblock %}

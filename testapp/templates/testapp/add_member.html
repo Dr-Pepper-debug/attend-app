@@ -1,0 +1,14 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>団員登録</h2>
+    <form action="/add_member" method="POST">
+        <label for="number">学籍番号</label>
+        <input name="number"></input>
+        <label for="name">氏名</label>
+        <input name="name"></input>
+        <button type="submit" class="btn btn-primary">団員追加</button>
+    </form>
+</div>
+{% endblock %}

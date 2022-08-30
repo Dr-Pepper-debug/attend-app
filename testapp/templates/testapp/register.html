@@ -1,0 +1,29 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>登録しました</h2>
+    <br>
+    <h3>こんにちは {{member.name}} さん</h3>
+    <h3 id="text"></h3>
+
+    <!-- 3秒で画面遷移 -->
+    <meta http-equiv="refresh" content="3; url=/" />
+
+    <!-- 時刻表示 -->
+    <script type="text/javascript">
+    document.getElementById("text").innerHTML = showTime();
+  
+    function showTime() {
+        var now = new Date();
+        var nowhour = now.getHours();
+        var nowminutes = now.getMinutes();
+        var nowseconds = now.getSeconds();
+  
+        var text = "出席日時：" + nowhour + "：" + nowminutes + "：" + nowseconds; 
+    
+        return text;
+    }
+    </script>
+</div>
+{% endblock %}
